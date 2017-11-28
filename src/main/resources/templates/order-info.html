@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    <title>Title</title>
+</head>
+<body>
+<h2>Order Pizza:</h2>
+
+<span class="badge">Order id:</span><span th:text="${order.getOrderId()}"></span><br></br>
+<span class="badge">Client name:</span><span th:text="${order.getClientName()}"></span><br></br>
+<span class="badge">Client address:</span><span th:text="${order.getClientAddress()}"></span><br></br>
+<span class="badge">Pizza type:</span><span th:text="${order.getPizzaType()}"></span><br></br>
+
+</body>
+</html>

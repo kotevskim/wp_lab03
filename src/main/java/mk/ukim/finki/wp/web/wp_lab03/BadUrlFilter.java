@@ -18,7 +18,7 @@ public class BadUrlFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) servletRequest;
         HttpServletResponse res = (HttpServletResponse) servletResponse;
         if (req.getSession(false) == null) {
-            res.sendRedirect("/OrderForm.html");
+            res.sendRedirect("/index.html");
         } else {
             filterChain.doFilter(servletRequest, servletResponse);
         }
