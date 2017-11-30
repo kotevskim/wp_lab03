@@ -7,10 +7,11 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.thymeleaf.Template;
+
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.spring4.SpringTemplateEngine;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 import org.thymeleaf.templateresolver.TemplateResolver;
@@ -22,7 +23,7 @@ import org.thymeleaf.templateresolver.TemplateResolver;
 @ComponentScan("mk.ukim.finki.wp.web.wp_lab03.web")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
-    /*
+
     @Bean
     public ViewResolver viewResolver() {
         InternalResourceViewResolver resolver =
@@ -32,7 +33,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         resolver.setExposeContextBeansAsAttributes(true);
         return resolver;
     }
-    */
+
 
     @Bean
     public ViewResolver viewResolver(SpringTemplateEngine templateEngine) {

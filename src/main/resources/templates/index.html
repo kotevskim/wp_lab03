@@ -8,10 +8,10 @@
 <h2>Order Pizza:</h2>
 
 <form method="post" action="/client_info.html">
-    <input type="radio" name="pizzaType" value="small" th:text="${pizzaTypes[0]}"></input><br></br>
-    <input type="radio" name="pizzaType" value="medium" th:text="${pizzaTypes[1]}"></input><br></br>
-    <input type="radio" name="pizzaType" value="large" th:text="${pizzaTypes[2]}"></input><br></br>
-    <br></br>
+    <div th:each="type: ${pizzaTypes}">
+        <input type="radio" name="pizzaType" value="small" th:text="${type}"/><br/>
+    </div>
+    <br/>
     <button type="submit">Submit</button>
 </form>
 
