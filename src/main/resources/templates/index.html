@@ -2,14 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"></meta>
-    <title>Title</title>
+    <title>Choose Pizza Type</title>
 </head>
 <body>
 <h2>Order Pizza:</h2>
 
 <form method="post" action="/client_info.html">
     <div th:each="type: ${pizzaTypes}">
-        <input type="radio" name="pizzaType" value="small" th:text="${type}"/><br/>
+        <input type="radio" name="pizzaType" th:value="${type}" th:text="${type}"/><br/>
     </div>
     <br/>
     <button type="submit">Submit</button>
