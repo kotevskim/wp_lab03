@@ -1,4 +1,4 @@
-package mk.ukim.finki.wp.web.wp_lab03;
+package mk.ukim.finki.wp.web.wp_lab4;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

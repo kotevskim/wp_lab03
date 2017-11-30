@@ -1,7 +1,7 @@
-package mk.ukim.finki.wp.web.wp_lab03.service.impl;
+package mk.ukim.finki.wp.web.wp_lab4.service.impl;
 
-import mk.ukim.finki.wp.web.wp_lab03.model.Order;
-import mk.ukim.finki.wp.web.wp_lab03.service.OrderService;
+import mk.ukim.finki.wp.web.wp_lab4.model.Order;
+import mk.ukim.finki.wp.web.wp_lab4.service.OrderService;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;

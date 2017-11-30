@@ -1,4 +1,4 @@
-package mk.ukim.finki.wp.web.wp_lab03.config;
+package mk.ukim.finki.wp.web.wp_lab4.config;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /*

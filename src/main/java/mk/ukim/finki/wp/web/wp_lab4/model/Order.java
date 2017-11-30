@@ -1,4 +1,4 @@
-package mk.ukim.finki.wp.web.wp_lab03.model;
+package mk.ukim.finki.wp.web.wp_lab4.model;
 
 public class Order {
     private String pizzaType;

@@ -1,12 +1,9 @@
-package mk.ukim.finki.wp.web.wp_lab03.web;
+package mk.ukim.finki.wp.web.wp_lab4.web;
 
-import mk.ukim.finki.wp.web.wp_lab03.model.Order;
-import mk.ukim.finki.wp.web.wp_lab03.service.OrderService;
-import mk.ukim.finki.wp.web.wp_lab03.service.PizzaService;
-import mk.ukim.finki.wp.web.wp_lab03.service.impl.OrderGenerator;
-import mk.ukim.finki.wp.web.wp_lab03.service.impl.PizzaTypeProvider;
+import mk.ukim.finki.wp.web.wp_lab4.model.Order;
+import mk.ukim.finki.wp.web.wp_lab4.service.OrderService;
+import mk.ukim.finki.wp.web.wp_lab4.service.PizzaService;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;

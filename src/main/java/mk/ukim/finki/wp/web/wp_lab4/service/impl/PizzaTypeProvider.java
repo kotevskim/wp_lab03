@@ -1,6 +1,6 @@
-package mk.ukim.finki.wp.web.wp_lab03.service.impl;
+package mk.ukim.finki.wp.web.wp_lab4.service.impl;
 
-import mk.ukim.finki.wp.web.wp_lab03.service.PizzaService;
+import mk.ukim.finki.wp.web.wp_lab4.service.PizzaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

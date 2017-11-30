@@ -1,4 +1,4 @@
-package mk.ukim.finki.wp.web.wp_lab03.config;
+package mk.ukim.finki.wp.web.wp_lab4.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
 @ComponentScan(
-        basePackages = {"mk.ukim.finki.wp.web.wp_lab03"},
+        basePackages = {"mk.ukim.finki.wp.web.wp_lab4"},
         excludeFilters = {
                 @Filter(
                         type = FilterType.ANNOTATION,

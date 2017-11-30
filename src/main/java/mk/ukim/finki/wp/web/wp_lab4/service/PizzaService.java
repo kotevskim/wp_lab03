@@ -1,4 +1,4 @@
-package mk.ukim.finki.wp.web.wp_lab03.service;
+package mk.ukim.finki.wp.web.wp_lab4.service;
 
 import java.util.List;
 

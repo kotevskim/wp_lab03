@@ -1,4 +1,4 @@
-package mk.ukim.finki.wp.web.wp_lab03;
+package mk.ukim.finki.wp.web.wp_lab4;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

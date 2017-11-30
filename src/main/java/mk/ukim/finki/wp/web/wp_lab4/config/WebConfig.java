@@ -1,4 +1,4 @@
-package mk.ukim.finki.wp.web.wp_lab03.config;
+package mk.ukim.finki.wp.web.wp_lab4.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,7 +20,7 @@ import org.thymeleaf.templateresolver.TemplateResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("mk.ukim.finki.wp.web.wp_lab03.web")
+@ComponentScan("mk.ukim.finki.wp.web.wp_lab4.web")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
 
