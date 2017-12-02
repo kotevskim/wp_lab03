@@ -24,9 +24,9 @@ public class PizzaOrderController {
 
     @Autowired
     public PizzaOrderController(
-            PizzaService pizzaService,
+            PizzaService simplePizzaSerivce,
             OrderService simpleOrderService) {
-        this.pizzaService = pizzaService;
+        this.pizzaService = simplePizzaSerivce;
         this.orderService = simpleOrderService;
     }
 
