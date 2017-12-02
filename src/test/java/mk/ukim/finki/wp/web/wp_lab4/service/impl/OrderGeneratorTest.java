@@ -8,11 +8,11 @@ import static org.junit.Assert.*;
 
 public class OrderGeneratorTest {
 
-    OrderGenerator service;
+    SimpleOrderService service;
 
     @Before
     public void setup() {
-        service = new OrderGenerator();
+        service = new SimpleOrderService();
     }
 
     @Test

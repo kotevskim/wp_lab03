@@ -8,10 +8,10 @@ import java.util.Arrays;
 import java.util.List;
 
 @Service
-public class PizzaTypeProvider implements PizzaService {
+public class SimplePizzaService implements PizzaService {
 
     @Autowired
-    public PizzaTypeProvider() {
+    public SimplePizzaService() {
     }
 
     @Override

@@ -1,11 +1,15 @@
-package mk.ukim.finki.wp.web.wp_lab4;
+package mk.ukim.finki.wp.web.wp_lab4.web.listeners;
 
+import mk.ukim.finki.wp.web.wp_lab4.model.Order;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.annotation.WebListener;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
+import java.util.HashMap;
+import java.util.Map;
 
 @WebListener
 public class SessionListener implements HttpSessionListener{
@@ -14,13 +18,15 @@ public class SessionListener implements HttpSessionListener{
 
     @Override
     public void sessionCreated(HttpSessionEvent httpSessionEvent) {
-        String sessionId = httpSessionEvent.getSession().getId();
-        logger.info("Session with id" + sessionId + " Created!");
+        HttpSession session = httpSessionEvent.getSession();
+        logger.info("SESSION: Session with ID " + session.getId() + " Created!");
+        Map<Long, Order> orders = new HashMap<>();
+        session.setAttribute("orders", orders);
     }
 
     @Override
     public void sessionDestroyed(HttpSessionEvent httpSessionEvent) {
         String sessionId = httpSessionEvent.getSession().getId();
-        logger.info("Session with id" + sessionId + " Destroyed!");
+        logger.info("SESSION: Session with id" + sessionId + " Destroyed!");
     }
 }

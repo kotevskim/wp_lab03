@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.Random;
 
 @Service
-public class OrderGenerator implements OrderService {
+public class SimpleOrderService implements OrderService {
 
     @Override
     public Order placeOrder(String pizzaType, String clientName, String clientAddress) {

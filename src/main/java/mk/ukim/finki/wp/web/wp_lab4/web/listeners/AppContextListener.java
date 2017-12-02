@@ -1,4 +1,4 @@
-package mk.ukim.finki.wp.web.wp_lab4;
+package mk.ukim.finki.wp.web.wp_lab4.web.listeners;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
