@@ -30,7 +30,7 @@ public class WebAppInitializer extends
     // for the application context created by the DispatcherServlet.
     // def2:
     // Loads the Spring application context with beans (web components such as
-    // controllers, view resolvers, and handler mappings) defined in the
+    // controller, view resolvers, and handler mappings) defined in the
     // WebConfig configuration class (using Java configuration)
     @Override
     protected Class<?>[] getServletConfigClasses() {

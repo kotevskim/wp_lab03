@@ -1,4 +1,4 @@
-package mk.ukim.finki.wp.web.wp_lab4.web.controllers;
+package mk.ukim.finki.wp.web.wp_lab4.web.controller;
 
 import mk.ukim.finki.wp.web.wp_lab4.model.Order;
 import mk.ukim.finki.wp.web.wp_lab4.service.OrderService;
