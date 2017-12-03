@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import javax.servlet.http.HttpSession;
 import java.util.*;
@@ -24,58 +25,67 @@ public class PizzaOrderController {
 
     @Autowired
     public PizzaOrderController(
-            PizzaService simplePizzaSerivce,
+            PizzaService simplePizzaService,
             OrderService simpleOrderService) {
-        this.pizzaService = simplePizzaSerivce;
+        this.pizzaService = simplePizzaService;
         this.orderService = simpleOrderService;
     }
 
     @RequestMapping(value = "pizza-type", method = GET)
-    public String showPizzaTypes(Map model) {
+    public String showPizzaTypes(Map<String, Object> model) {
         model.put("pizzaTypes", pizzaService.getPizzaTypes());
         return "pizza-type-input";
     }
 
-    @RequestMapping(value = "client-info", method = POST)
-    String showClientInfo(@RequestParam String pizzaType, HttpSession session) {
+    @RequestMapping(value = "pizza-type", method = POST)
+    public String processPizzaTypeSelection(
+            @RequestParam(defaultValue = "Medium") String pizzaType,
+            HttpSession session) {
         session.setAttribute("pizzaType", pizzaType);
-        return "client-input-info";
+        return "redirect:/order/client-info";
     }
 
-    @RequestMapping(value = "order-info", method = POST)
-    public String placeOrder(
+    @RequestMapping(value = "client-info", method = GET)
+    public String showClientInfoForm() {
+        return "client-info-input";
+    }
+
+    @RequestMapping(value = "client-info", method = POST)
+    public String processOrder(
             @RequestParam String clientName,
             @RequestParam String clientAddress,
-            HttpSession session) {
-        String pizzaType = session.getAttribute("pizzaType").toString();
-        Order order = this.orderService.placeOrder(pizzaType, clientName, clientAddress);
-        Map<Long, Order> orders = (Map<Long, Order>) session.getAttribute("orders");
+            @SessionAttribute String pizzaType,
+            @SessionAttribute Map<Long, Order> orders) {
+        Order order = this.orderService.placeOrder(
+                pizzaType, clientName, clientAddress
+        );
         orders.put(order.getOrderId(), order);
-        // TODO ask riste should i explicitly call setAttribute, because getAttribute returns a reference to the real object, not to a copy
+        // TODO ask should i explicitly call setAttribute, because getAttribute returns a reference to the real object, not to a copy
 //        session.setAttribute("orders", orders);
         return "redirect:/order/" + order.getOrderId();
     }
 
+    // TODO how to test this method
     @RequestMapping(value = "{id}", method = GET)
-    public String showOrder(@PathVariable String id, HttpSession session, Map model) {
-        Map<Long, Order> orders = (Map<Long, Order>) session.getAttribute("orders");
-        String viewName;
+    public String showOrder(
+            @PathVariable String id,
+            @SessionAttribute Map<Long, Order> orders,
+            Map<String, Object> model) {
         Long orderId = Long.parseLong(id);
-        if (!orders.keySet().contains(orderId)){
-            model.put("id", id);
-            viewName = "order-not-exist";
-        } else {
-            Order order = orders.get(orderId);
-            model.put("order", order);
-            viewName = "order-info";
+        Order order = orders.get(orderId);
+        if (order == null) {
+            return "page-not-found";
         }
-        return viewName;
+        model.put("order", order);
+        return "order-info";
     }
 
     @RequestMapping(value = "delete/{id}", method = GET)
-    public String deleteOrder(@PathVariable String id, HttpSession session) {
-        Map<Long, Order> orders = (Map<Long, Order>) session.getAttribute("orders");
+    public String deleteOrder(
+            @PathVariable String id,
+            @SessionAttribute Map<Long, Order> orders) {
         orders.remove(Long.parseLong(id));
         return "redirect:/order/pizza-type";
     }
+
 }

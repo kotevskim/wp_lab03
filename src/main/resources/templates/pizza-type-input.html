@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"></meta>
-    <title>Choose Pizza Type</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <title>Choose pizza type</title>
 </head>
 <body>
-<h2>Order Pizza:</h2>
 
-<form method="post" action="/order/client-info">
-    <div th:each="type: ${pizzaTypes}">
-        <input type="radio" name="pizzaType" th:value="${type}" th:text="${type}"/><br/>
+
+<div class="text-center" style="width: 400px; border: 1px solid lightgreen; border-radius: 5px; margin: 30px auto auto">
+    <div class="alert alert-success"><h3>Chose Pizza Type:</h3></div>
+    <div style="padding: 30px">
+        <form class="form-inline" method="post">
+            <div th:each="type: ${pizzaTypes}">
+                <input class="form-control" type="radio" name="pizzaType" th:value="${type}"/>
+                <label th:text="${type}"></label>
+                <br/>
+            </div>
+            <br/>
+            <button type="submit" class="btn btn-lg btn-success">Submit</button>
+        </form>
     </div>
-    <br/>
-    <button type="submit">Submit</button>
-</form>
+</div>
 
 </body>
 </html>

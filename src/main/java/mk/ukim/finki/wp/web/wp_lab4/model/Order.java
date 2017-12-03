@@ -1,8 +1,12 @@
 package mk.ukim.finki.wp.web.wp_lab4.model;
 
+import javax.validation.constraints.NotNull;
+
 public class Order {
     private String pizzaType;
+    @NotNull
     private String clientName;
+    @NotNull
     private String clientAddress;
     private Long orderId;
 
